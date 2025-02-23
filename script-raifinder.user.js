@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name         New Userscript
+// @name         script-raifinder
 // @namespace    http://tampermonkey.net/
 // @version      2025-02-23
-// @description  try to take over the world!
+// @description  Find more revelent AOO for the current mission in the mission page of operateur112.fr
 // @author       Thunlos
 // @match        https://www.operateur112.fr/
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=operateur112.fr
