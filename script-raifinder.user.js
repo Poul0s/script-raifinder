@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         script-raifinder
-// @namespace    http://tampermonkey.net/
+// @namespace    https://github.com/Poul0s/script-raifinder
 // @version      2025-02-23.02
 // @description  Find more revelent AOO for the current mission in the mission page of operateur112.fr
 // @author       Thunlos
