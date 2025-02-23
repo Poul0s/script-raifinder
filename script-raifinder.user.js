@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         script-raifinder
 // @namespace    http://tampermonkey.net/
-// @version      2025-02-23
+// @version      2025-02-23.02
 // @description  Find more revelent AOO for the current mission in the mission page of operateur112.fr
 // @author       Thunlos
 // @match        https://www.operateur112.fr/
@@ -22,10 +22,11 @@
 
 	async function loadMissionPageInjection(iframeNode, iframeContentWindow) {
 
-		let missionName = iframeContentWindow.document.getElementById("mission_general_info").dataset.missionTitle.toUpperCase();
+		let missionInfo = iframeContentWindow.document.getElementById("mission_general_info");
 		let RAIContainer = iframeContentWindow.document.getElementById("mission-aao-group");
-		if (!RAIContainer)
+		if (!RAIContainer || !missionInfo)
 			return;
+		let missionName = missionInfo.dataset.missionTitle.toUpperCase()
 		let RAIs = RAIContainer.querySelectorAll("a span");
 		let mostRevelent = null;
 		for (let RAISpan of RAIs) {
@@ -73,7 +74,6 @@
 			}
 			if (bolding)
 				newRAIName += "</b>";
-			console.log(RAIName, newRAIName);
 			RAISpan.innerHTML = newRAIName;
 		}
 
