@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         script-raifinder
 // @namespace    https://github.com/Poul0s/script-raifinder
-// @version      2025-02-23.02
+// @version      2025-02-25.01
 // @description  Find more revelent AOO for the current mission in the mission page of operateur112.fr
 // @author       Thunlos
 // @match        https://www.operateur112.fr/
@@ -102,10 +102,10 @@
 			if (mutation.type === "childList") {
 				for (let node of mutation.addedNodes) {
 					if (node.classList.contains("lightbox_iframe")) {
-						node.onload = () => {
+						node.addEventListener("load", () => {
 							if (node.src.startsWith(window.location.origin + "/missions/"))
 								loadMissionPageInjection(node, node.contentWindow);
-						}
+						})
 					}
 				}
 			}
